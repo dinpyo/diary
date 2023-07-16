@@ -26,11 +26,6 @@
 	String noticePw = request.getParameter("noticePw"); 	
 
 	// 값들을 DB 테이블 입력
-	/* 
-	insert into notice(notice_title, notice_content, notice_writer, notice_pw, createdate, updatedate) 
-	values(?,?,?,?,now(),now())
-	*/	
-	
 	// db 연결
 	Class.forName("org.mariadb.jdbc.Driver");
 	Connection conn = DriverManager.getConnection(

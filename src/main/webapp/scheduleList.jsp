@@ -80,7 +80,6 @@
    // DB data를 가져오는 알고리즘
    Class.forName("org.mariadb.jdbc.Driver");
    Connection conn = DriverManager.getConnection("jdbc:mariadb://127.0.0.1:3306/diary","root","java1234");
-   //sql구문
    String sql = "select schedule_no scheduleNo, substr(schedule_memo,1,5) scheduleMemo,schedule_color scheduleColor,day(schedule_date) scheduleDate from schedule where year(schedule_date)=? and month(schedule_date)=? order by month(schedule_date) asc";
    PreparedStatement stmt = conn.prepareStatement(sql);
    stmt.setInt(1,targetYear);
@@ -171,9 +170,7 @@
                      </div>
                      
                   </td>
-         <%
-               
-                  
+         <%             
                } else if(dateNum<=0){
          %>
                   <td style="color:gray;"><%=dateNum+lastDate2%></td>
